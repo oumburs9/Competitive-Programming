@@ -10,13 +10,16 @@ class Stack:
         self.stack.append(data)
 
     def pop(self):
-        if self.stack_size() < 1:
-            return
+        
+        if self.size_stack() < 1:
+            return -1
         data = self.stack[-1]
         del self.stack[-1]
         return data
 
     def peek(self):
+        if self.size_stack() < 1:
+            return -1
         return self.stack[-1]
 
     def size_stack(self):
@@ -26,10 +29,11 @@ class Stack:
         return self.stack == []
 stack = Stack()
 stack.push(1)
-stack.push(11)
-stack.push(111)
-stack.push(1111)
+# stack.push(11)
+# stack.push(111)
+# stack.push(1111)
 print("size: %d" % stack.size_stack())
+print("pop.: %d" % stack.pop())
 print("pop.: %d" % stack.pop())
 print("size: %d" % stack.size_stack())
 print("peek: %d" % stack.peek())
