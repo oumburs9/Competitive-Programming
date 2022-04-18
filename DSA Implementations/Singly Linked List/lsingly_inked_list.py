@@ -26,6 +26,18 @@ class LinkedList:
         while current_node.next:
             current_node = current_node.next
         current_node.next = new_node
+    def reverse(self):
+        current_node = self.head
+        next_node = None
+        prev_node = None
+
+        while current_node:
+            next_node = current_node.next
+            current_node.next = prev_node
+            prev_node = current_node
+            current_node = next_node
+        self.head = prev_node
+
     def remove_node(self,data):
         
         current_node = self.head
@@ -47,10 +59,6 @@ class LinkedList:
             prev_node.next = current_node.next
 
 
-        
-
-
-
     def size_of_list(self):
         return self.numNode
         
@@ -70,24 +78,27 @@ if __name__ == '__main__':
     print('----------')
     llst.traverse()
     print("size:",llst.size_of_list())
-    llst.remove_node(1)
+    # llst.remove_node(1)
     print('----------')
+    llst.reverse()
     llst.traverse()
-    print('----------')
-    llst.insert_end(8)
-    llst.insert_start(10)
+    
+    # llst.traverse()
+    # print('----------')
+    # llst.insert_end(8)
+    # llst.insert_start(10)
 
-    llst.traverse()
-    print('----------')
-    print("size:",llst.size_of_list())
-    print('----------')
-    print('-----hh-----')
-    llst.remove_node(8)
-    llst.remove_node(10)
+    # llst.traverse()
+    # print('----------')
+    # print("size:",llst.size_of_list())
+    # print('----------')
+    # print('-----hh-----')
+    # llst.remove_node(8)
+    # llst.remove_node(10)
 
-    llst.traverse()
-    print('----------')
-    print("size:",llst.size_of_list())
+    # llst.traverse()
+    # print('----------')
+    # print("size:",llst.size_of_list())
 
 
             
