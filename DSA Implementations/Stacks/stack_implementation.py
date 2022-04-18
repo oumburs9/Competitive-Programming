@@ -1,4 +1,7 @@
 
+from threading import stack_size
+
+
 class Stack:
     def __init__(self):
         self.stack = []
@@ -7,6 +10,8 @@ class Stack:
         self.stack.append(data)
 
     def pop(self):
+        if self.stack_size() < 1:
+            return
         data = self.stack[-1]
         del self.stack[-1]
         return data
