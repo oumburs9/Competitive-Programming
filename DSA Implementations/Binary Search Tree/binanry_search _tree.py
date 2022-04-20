@@ -26,22 +26,48 @@ class BinarySearchTree:
                 self.insert_node(data,node.rightChild)
             else:
                 node.rightChild = Node(data,node)
-    def find_max_value(self,):
-        if self.root:
-            return self.max_value(self.root)
-    def max_value(self,node):
-        if node.rightChild:
-            return self.max_value(node.rightChild)
-        return node.data
+    # # Find max val recursively
+    # def find_max_value(self,):
+    #     if self.root:
+    #         return self.max_value(self.root)
+    # def max_value(self,node):
+    #     if node.rightChild:
+    #         return self.max_value(node.rightChild)
+    #     return node.data
 
+    # # Find min val recursively
+    # def find_min_value(self,):
+    #     if self.root:
+    #         return self.min_value(self.root)
+    # def min_value(self,node):
+    #     if node.leftChild:
+    #         return self.min_value(node.leftChild)
+    #     return node.data
+    
 
-    def find_min_value(self,):
+    # Find max val iteratively
+    def find_max_value(self):
         if self.root:
-            return self.min_value(self.root)
-    def min_value(self,node):
-        if node.leftChild:
-            return self.min_value(node.leftChild)
-        return node.data
+            return self.max_val(self.root)
+    def max_val(self,node):
+        current_val = self.root
+
+        while current_val.rightChild:
+            current_val = current_val.rightChild
+
+        return current_val.data
+    
+    # Find min val iteratively
+    def find_min_value(self):
+        if self.root:
+            return self.min_val(self.root)
+    def min_val(self,node):
+        current_val = self.root
+
+        while current_val.leftChild:
+            current_val = current_val.leftChild
+
+        return current_val.data
 
     
     def traverse(self):
