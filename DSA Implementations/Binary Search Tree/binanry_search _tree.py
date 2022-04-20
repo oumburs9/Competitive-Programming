@@ -26,6 +26,24 @@ class BinarySearchTree:
                 self.insert_node(data,node.rightChild)
             else:
                 node.rightChild = Node(data,node)
+    def find_max_value(self,):
+        if self.root:
+            return self.max_value(self.root)
+    def max_value(self,node):
+        if node.rightChild:
+            return self.max_value(node.rightChild)
+        return node.data
+
+
+    def find_min_value(self,):
+        if self.root:
+            return self.min_value(self.root)
+    def min_value(self,node):
+        if node.leftChild:
+            return self.min_value(node.leftChild)
+        return node.data
+
+    
     def traverse(self):
         if self.root is not None:
             self.traverse_in_order(self.root)
@@ -45,5 +63,7 @@ bst.insert(4)
 bst.insert(-3)
 
 bst.traverse()
+print("min_value:%s" %bst.find_min_value())
+print("max_value:%s" %bst.find_max_value())
 
 
