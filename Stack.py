@@ -24,15 +24,15 @@ class Stack:
         
     def is_empty(self):
         return self.stack == []
-stack = Stack()
-stack.push(1)
-# stack.push(11)
-# stack.push(111)
-# stack.push(1111)
-print("size: %d" % stack.size_stack())
-print("pop.: %d" % stack.pop())
-print("pop.: %d" % stack.pop())
-print("size: %d" % stack.size_stack())
-print("peek: %d" % stack.peek())
-print("size: %d" % stack.size_stack())
+# stack = Stack()
+# stack.push(1)
+# # stack.push(11)
+# # stack.push(111)
+# # stack.push(1111)
+# print("size: %d" % stack.size_stack())
+# print("pop.: %d" % stack.pop())
+# print("pop.: %d" % stack.pop())
+# print("size: %d" % stack.size_stack())
+# print("peek: %d" % stack.peek())
+# print("size: %d" % stack.size_stack())
 
