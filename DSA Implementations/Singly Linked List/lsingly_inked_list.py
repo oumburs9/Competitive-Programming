@@ -26,6 +26,7 @@ class LinkedList:
         while current_node.next:
             current_node = current_node.next
         current_node.next = new_node
+        
     def reverse(self):
         current_node = self.head
         next_node = None
