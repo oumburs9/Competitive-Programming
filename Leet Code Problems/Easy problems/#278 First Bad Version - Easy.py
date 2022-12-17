@@ -6,7 +6,7 @@ def firstBadVersion(n):
         if (not isBadVersion(mid)):
             left = mid+1
         else:
-            right = mid
+            right = mi
     return left
 
 
