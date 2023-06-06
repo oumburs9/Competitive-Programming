@@ -23,20 +23,20 @@ class Solution:
         return ans.next
 
 
-# node creation
-n_1 = ListNode(1)
-n_2 = ListNode(2)
-n_3 = ListNode(3)
-n_4 = ListNode(4)
+# # node creation
+# n_1 = ListNode(1)
+# n_2 = ListNode(2)
+# n_3 = ListNode(3)
+# n_4 = ListNode(4)
 
-#  node connection
+# #  node connection
 
-n_1.next = n_2
-n_2.next = n_3
-n_3.next = n_4
-s = Solution()
-res = s.removeNthFromEnd(n_1,2)
-while (res):
-    print(res.val)
-    res = res.next
+# n_1.next = n_2
+# n_2.next = n_3
+# n_3.next = n_4
+# s = Solution()
+# res = s.removeNthFromEnd(n_1,2)
+# while (res):
+#     print(res.val)
+#     res = res.next
 
