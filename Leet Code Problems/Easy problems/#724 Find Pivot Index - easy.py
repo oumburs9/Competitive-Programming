@@ -5,9 +5,10 @@ class Solution:
     def pivotIndex(self, nums: List[int]) -> int:
         total = sum(nums)
         
-        leftSum =0
+        leftSum = 0
         
         for u,v in enumerate(nums):
+            # rightSum = total -(leftSum - currentElement)
             rightSum = total - v - leftSum
             if leftSum == rightSum:
                 return u
