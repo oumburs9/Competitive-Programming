@@ -6,20 +6,20 @@ class Solution:
         def backtrack(i, bucket):
             nonlocal minUnfairness
 
-            # Base case: If all cookies are distributed, update the minimum unfairness
+            # Base case: 
             if i >= len(cookies):
                 minUnfairness = min(minUnfairness, max(bucket))
                 return
 
-            # Pruning case: If the current distribution is already worse than the minimum unfairness, stop exploring
+            # Pruning case: 
             if max(bucket) > minUnfairness:
                 return
 
-            # Try assigning the i-th cookie to each child and explore the possibilities
+            # assigning the i-th cookie to each child and explore the possibilities
             for j in range(k):
                 bucket[j] += cookies[i]  # Assign cookie to the j-th child
-                backtrack(i + 1, bucket)  # Explore next cookie
-                bucket[j] -= cookies[i]  # Backtrack: Remove cookie from the j-th child
+                backtrack(i + 1, bucket)  # Explore next
+                bucket[j] -= cookies[i]  # Backtrack: 
 
-        backtrack(0, bucket)  # Start the backtracking process with initial index and bucket
+        backtrack(0, bucket)  # Start the backtracking 
         return minUnfairness
