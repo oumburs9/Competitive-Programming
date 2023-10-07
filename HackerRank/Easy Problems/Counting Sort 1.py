@@ -6,15 +6,15 @@ import random
 import re
 import sys
 
-#
-# Complete the 'countingSort' function below.
-#
-# The function is expected to return an INTEGER_ARRAY.
-# The function accepts INTEGER_ARRAY arr as parameter.
-#
+
+'''
+Complete the 'countingSort' function below.
+
+The function is expected to return an INTEGER_ARRAY.
+The function accepts INTEGER_ARRAY arr as parameter.
+'''
 
 def countingSort(arr):
-    # Write your code here
     counter = [0]*100
     for i in  arr:
         counter[i] +=1
