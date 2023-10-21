@@ -1,3 +1,37 @@
+
+
+class Solution:
+    def compress(self, chars: List[str]) -> int:
+        if not chars:
+            return 0  
+        
+        cur = 0 
+        count = 1
+        
+        for i in range(1, len(chars)):
+            if chars[i] == chars[i-1]:
+                count += 1
+            else:
+                chars[cur] = chars[i-1]
+                cur += 1
+                
+                if count > 1:
+                    for digit in str(count):
+                        chars[cur] = digit
+                        cur += 1
+                
+                count = 1
+        
+        # handle the last character
+        chars[cur] = chars[-1]
+        cur += 1
+        if count > 1:
+            for digit in str(count):
+                chars[cur] = digit
+                cur += 1
+        
+        return cur
+
 # def compress(chars) -> int:
 #     indexres = 0
 #     for i in range(len(chars)):
