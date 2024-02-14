@@ -1,10 +1,17 @@
 class Solution:
     def largestPerimeter(self, nums: List[int]) -> int:
-        res = 0
-        nums.sort(reverse=True)
-
-        for i in range(len(nums)-2):
+        nums.sort(reverse =True)
+        n = len(nums)
+        area = 0
+        for i in range(n-2):
             if nums[i] < nums[i+1] + nums[i+2]:
-                res = max(res,sum(nums[i:i+3]))
-        return res
+                 ar = sum(nums[i:i+3])
+                 area = max(area,ar)
+        return area
+
+                 
+            
+
+
+
         
