@@ -1,11 +1,17 @@
 class Solution:
   def minPatches(self, nums: List[int], n: int) -> int:
-    miss, i, patches = 1, 0, 0
-    while miss <= n:
-        if i < len(nums) and nums[i] <= miss:
-            miss += nums[i]
-            i += 1
-        else:
-            miss *= 2
-            patches += 1
-    return patches
+        patch_needed = 0
+        i = 0
+        cumSum = 0
+        
+        while cumSum < n:
+            
+            if i < len(nums) and nums[i] <= cumSum + 1:
+                cumSum += nums[i]
+                i += 1
+            else:
+                cumSum += cumSum + 1
+                patch_needed += 1
+        
+        return patch_needed
+
