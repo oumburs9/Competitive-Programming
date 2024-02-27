@@ -5,13 +5,20 @@
 #         self.left = left
 #         self.right = right
 class Solution:
-    def isMirror(self,t1,t2):
-        if(t1 is None and t2 is None):
-            return True
-        if(t1 is None or t2 is None):
-            return False
-        return (t1.val==t2.val) and self.isMirror(t1.right,t2.left) and self.isMirror(t1.left,t2.right)
-    def isSymmetric(self, root: TreeNode) -> bool:
-        return self.isMirror(root,root)
-    
+    def isSymmetric(self, root: Optional[TreeNode]) -> bool:
+
+        def dfs(node1,node2):
+            if not node1 and not node2:
+                return True
+            if not node1 and  node2 or node1 and not node2:
+                return False
+            
+            if node1.val == node2.val:
+                left = dfs(node1.left,node2.right)
+                right = dfs(node2.left,node1.right)
+
+                return left and right
+
+
+        return dfs(root.left,root.right)
         
