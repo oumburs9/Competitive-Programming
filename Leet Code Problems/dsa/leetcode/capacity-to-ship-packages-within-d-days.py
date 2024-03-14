@@ -1,25 +1,37 @@
 class Solution:
     def shipWithinDays(self, weights: List[int], days: int) -> int:
-        def isPossible( weights: List[int], capacity: int, days: int) -> bool:
-            days_needed = 1
-            current_load = 0
-            
-            for weight in weights:
-                current_load += weight
-                if current_load > capacity:
-                    days_needed += 1
-                    current_load = weight
-            
-            return days_needed <= days
+        def checker(mid):
 
-    
-        left, right = max(weights), sum(weights)
-        
-        while left < right:
-            mid = (left + right) // 2
-            if isPossible(weights, mid, days):
-                right = mid
+            days = 1
+            cur = 0
+            for weight in weights:
+                if cur + weight > mid:
+                    days += 1
+                    cur = weight
+                else:
+                    cur += weight
+            return days
+            
+        low = max(weights)
+        high = sum(weights)
+        while low <= high:
+            mid = low + (high - low) // 2
+            if checker(mid) <= days:
+                high = mid - 1
+                
             else:
-                left = mid + 1
+                low = mid + 1
+                
+        return low
+    
+     
         
-        return left
+        
+        
+        
+        
+   
+        
+        
+        
+        
