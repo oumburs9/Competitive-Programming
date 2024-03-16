@@ -1,7 +1,6 @@
 class Solution:
     def shipWithinDays(self, weights: List[int], days: int) -> int:
         def checker(mid):
-
             days = 1
             cur = 0
             for weight in weights:
@@ -24,14 +23,6 @@ class Solution:
                 
         return low
     
-     
-        
-        
-        
-        
-        
-   
-        
-        
-        
-        
+    '''
+    3,2,2,4,1,4
+    '''
